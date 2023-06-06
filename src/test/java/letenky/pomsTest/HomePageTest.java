@@ -23,7 +23,7 @@ public class HomePageTest {
         driver = new ChromeDriver();
 
     }
-//    @AfterEach
+    @AfterEach
     public void endDriver(){
         driver.close();
     }
@@ -39,7 +39,7 @@ public class HomePageTest {
 
         WebElement day = hp.searchDayInMonth("16", "ČERVENEC 2023");
         if(day == null){
-            System.out.println("failed");
+//            System.err.println("failed to find day");
         }
         if (day != null) {
             day.click();
@@ -52,10 +52,9 @@ public class HomePageTest {
         Assertions.assertEquals("VIE", e1.get(0).getText());
         Assertions.assertEquals("LGW", e1.get(1).getText());
 
-        driver.close(); // todo remove
     }
 
-//    Vídeň VIE	Praha PRG  date
+//    from ARG1 to ARG2
     @ParameterizedTest(name = "#{index} run test with args {0}{1}{2}{3} expected result {4}{5}")
     @CsvSource({"Vídeň, Praha, 1, ČERVENEC 2023, VIE, PRG"})
     public void search_inputArgs_returnsFlights(String from, String to, String day, String month, String code_start, String code_end) throws InterruptedException {
@@ -67,7 +66,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth(day, month);
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -82,10 +81,9 @@ public class HomePageTest {
         Assertions.assertEquals(code_start, e1.get(0).getText());
         Assertions.assertEquals(code_end, e1.get(1).getText());
 
-        driver.close();
     }
 
-//    Adana UAB London LON  2.8.  null
+//    Adana UAB to ARG  2.8.  null
     @ParameterizedTest(name = "#{index} run test with args {0} {1} {2} expected result error dialog")
     @CsvSource({"Londýn, 2, SRPEN 2023"})
     public void search_fromUAB_toArg1_dateArg23_returnError(String to, String day, String month) throws InterruptedException {
@@ -97,7 +95,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth(day, month);
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -112,7 +110,6 @@ public class HomePageTest {
             throw new RuntimeException(e);
         }
 
-        driver.close();
     }
 
 //    London LON  Adana UAB  2.8.  null
@@ -127,7 +124,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth(day, month);
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -142,7 +139,6 @@ public class HomePageTest {
             throw new RuntimeException(e);
         }
 
-        driver.close();
     }
 
 //    from VIE to Arg   date
@@ -157,7 +153,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth(day, month);
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -171,7 +167,6 @@ public class HomePageTest {
         Assertions.assertEquals("VIE", e1.get(0).getText());
         Assertions.assertEquals(code_end, e1.get(1).getText());
 
-        driver.close();
     }
 
 //    Adana UAB London LON  null  null
@@ -186,7 +181,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth("", "");
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -201,7 +196,6 @@ public class HomePageTest {
             throw new RuntimeException(e);
         }
 
-        driver.close();
     }
 
 
@@ -215,7 +209,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth("2", "SRPEN 2023");
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -229,9 +223,7 @@ public class HomePageTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //todo make assertions
 
-        driver.close();
     }
 
     @Test
@@ -244,7 +236,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth("2", "SRPEN 2023");
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -264,9 +256,7 @@ public class HomePageTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //todo make assertions
 
-        driver.close();
     }
 
     @Test
@@ -279,7 +269,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth("", "");
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -293,9 +283,7 @@ public class HomePageTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //todo make assertions
 
-        driver.close();
     }
 
     @Test
@@ -308,7 +296,7 @@ public class HomePageTest {
 
         WebElement dayButton = hp.searchDayInMonth("", "");
         if(dayButton == null){
-            System.out.println("failed");
+//            System.err.println("failed");
         }
         if (dayButton != null) {
             dayButton.click();
@@ -322,9 +310,7 @@ public class HomePageTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //todo make assertions
 
-        driver.close();
     }
 
 }

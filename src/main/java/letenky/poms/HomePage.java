@@ -25,7 +25,6 @@ public class HomePage {
         driver.get("https://www.letuska.cz/");
         wait.until(ExpectedConditions.visibilityOf(cookiesButtonAgree));
 //        wait.until(ExpectedConditions.visibilityOf(hledatButton));
-//        wait.until(ExpectedConditions.visibilityOf(...));
 
     }
 
@@ -45,18 +44,9 @@ public class HomePage {
     WebElement osobaField;
     @FindBy(xpath = "//span[normalize-space()='Hledat']")
     WebElement hledatButton;
-    @FindBy(xpath = "//body[1]/app-root[1]/div[1]/ng-component[1]/div[1]/ng-component[1]/layout-multi-section[1]/section[1]/layout-header-area[1]/header[1]/div[1]/div[2]/search-form[1]/search-form-cmp[1]/div[1]/widgets-modal[1]/widgets-envelope[1]/div[1]/calendar-widget[1]/ska-datepick-cmp[1]/datepick-month[2]/table[1]/tr[5]/td[4]")
-    WebElement dayButton1;
-    @FindBy(xpath = "//body[1]/app-root[1]/div[1]/ng-component[1]/div[1]/ng-component[1]/layout-multi-section[1]/section[1]/layout-header-area[1]/header[1]/div[1]/div[2]/search-form[1]/search-form-cmp[1]/div[1]/widgets-modal[1]/widgets-envelope[1]/div[1]/calendar-widget[1]/ska-datepick-cmp[1]/datepick-month[2]/table[1]/tr[5]/td[7]")
-    WebElement dayButton2;
-    @FindBy(xpath = "//strong[contains(text(),'Vídeň')]")
-    WebElement VidenButton;
-    @FindBy(xpath = "//strong[normalize-space()='Londýn']")
-    WebElement LondynButton;
     @FindBy(xpath = "//span[contains(text(),'Jednosměrná')]")
     WebElement jednosmernaButton;
-    @FindBy(xpath = "//input[@placeholder='Přidat další']")
-    WebElement field1;
+
 //    @FindBy(xpath = "")
 //    WebElement ;
 //    @FindBy(xpath = "")

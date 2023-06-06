@@ -21,18 +21,15 @@ public class RezervacePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        System.out.println("began waiting");
         Thread.sleep(30000);
-        System.out.println("ended");
 //        wait.until(ExpectedConditions.visibilityOf(dataLetu));
-//        wait.until(ExpectedConditions.visibilityOf(...));
 
     }
 
-    public RezervacePage goToRezervacePage(){
-        driver.get("");
-        return this;
-    }
+//    public RezervacePage goToRezervacePage(){
+//        driver.get("");
+//        return this;
+//    }
 
     @FindBy(xpath = "//div[@id='filtersContainer']//div[@class='sorter TotalPrice selected ng-star-inserted']")
     WebElement sortByPrice;
